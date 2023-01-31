@@ -34,7 +34,13 @@ const isPalindrome = function (str) {
 };
 
 const largestPair = function (array) {
-  // your code here - don't forget to return a number!
+  let largestProduct = array[0] * array[1];
+  for (let i = 0; i < array.length; i++) {
+    testProduct = array[i] * array[i + 1];
+    if (testProduct > largestProduct) largestProduct = testProduct;
+  }
+
+  return largestProduct;
 };
 
 const removeParenth = function (str) {
