@@ -39,12 +39,13 @@ const largestPair = function (array) {
     testProduct = array[i] * array[i + 1];
     if (testProduct > largestProduct) largestProduct = testProduct;
   }
-
   return largestProduct;
 };
 
 const removeParenth = function (str) {
-  // your code here - don't forget to return a string!
+  const openIndex = str.indexOf("(");
+  const closeIndex = str.indexOf(")");
+  return str.substring(0, openIndex) + str.substring(closeIndex + 1);
 };
 
 const scoreScrabble = function (str) {
