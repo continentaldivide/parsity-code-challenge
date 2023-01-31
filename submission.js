@@ -49,5 +49,32 @@ const removeParenth = function (str) {
 };
 
 const scoreScrabble = function (str) {
-  // your code here - don't forget to return a number!
+  const onePoints = ["a", "e", "i", "o", "u", "l", "n", "r", "s", "t"];
+  const twoPoints = ["d", "g"];
+  const threePoints = ["b", "c", "m", "p"];
+  const fourPoints = ["f", "h", "v", "w", "y"];
+  const fivePoints = ["k"];
+  const eightPoints = ["j", "x"];
+  const tenPoints = ["q", "z"];
+  let pointTotal = 0;
+
+  const pointCounter = (element) => {
+    if (onePoints.includes(element)) {
+      pointTotal += 1;
+    } else if (twoPoints.includes(element)) {
+      pointTotal += 2;
+    } else if (threePoints.includes(element)) {
+      pointTotal += 3;
+    } else if (fourPoints.includes(element)) {
+      pointTotal += 4;
+    } else if (fivePoints.includes(element)) {
+      pointTotal += 5;
+    } else if (eightPoints.includes(element)) {
+      pointTotal += 8;
+    } else if (tenPoints.includes(element)) {
+      pointTotal += 10;
+    }
+  };
+  str.split("").forEach((element) => pointCounter(element));
+  return pointTotal;
 };
