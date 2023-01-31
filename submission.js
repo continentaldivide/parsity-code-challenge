@@ -5,7 +5,7 @@ const findSum = function (array) {
 const findFrequency = function (array) {
   let most = 0;
   let mostID = "";
-  let least = 999;
+  let least = array.length + 1;
   let leastID = "";
   const countElement = (element) => {
     let total = 0;
